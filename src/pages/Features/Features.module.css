@@ -1,0 +1,234 @@
+/* Features.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --red: #C0201F;
+  --red-dark: #961818;
+  --red-light: #f5e6e6;
+  --white: #FFFFFF;
+  --ivory: #FAFAF8;
+  --obsidian: #1A1210;
+  --text-mid: #5A4F4F;
+  --text-muted: #9A8F8F;
+  --border: #E8E4DE;
+  --shadow: rgba(26,18,16,0.08);
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ─── Page ─── */
+.featuresPage {
+  font-family: var(--font-body);
+  background: var(--ivory);
+  overflow-x: hidden;
+}
+
+/* ─── Features Grid Section ─── */
+.featuresGridSection {
+  padding: 96px 32px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.gridHeader {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.gridBadge {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--red);
+  display: inline-block;
+  margin-bottom: 16px;
+  background: var(--red-light);
+  padding: 5px 14px;
+  border-radius: 20px;
+}
+
+.gridHeader h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  color: var(--obsidian);
+  margin-bottom: 16px;
+  letter-spacing: 0.3px;
+}
+
+.gridHeader p {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+/* ─── Feature Grid (3 columns) ─── */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.featureCard {
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.4s var(--ease);
+  box-shadow: 0 4px 16px var(--shadow);
+  opacity: 0;
+  animation: fadeUp 0.6s var(--ease) forwards;
+}
+
+.featureCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* Card Image */
+.cardImage {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: var(--obsidian);
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+
+.featureCard:hover .cardImage img {
+  transform: scale(1.05);
+}
+
+.cardIcon {
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: var(--red);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(192,32,31,0.3);
+  transition: all 0.3s var(--ease);
+}
+
+.featureCard:hover .cardIcon {
+  transform: scale(1.08);
+  background: var(--red-dark);
+}
+
+.cardIcon img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+/* Card Content */
+.cardContent {
+  padding: 32px 24px 28px;
+}
+
+.cardContent h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--obsidian);
+  margin-bottom: 12px;
+  letter-spacing: 0.3px;
+}
+
+.cardContent p {
+  font-size: 0.8rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.featureDetail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--red);
+  background: var(--red-light);
+  padding: 8px 14px;
+  border-radius: 30px;
+  width: fit-content;
+}
+
+.detailDot {
+  width: 6px;
+  height: 6px;
+  background: var(--red);
+  border-radius: 50%;
+}
+
+
+/* ─── Animations ─── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .featuresGridSection {
+    padding: 64px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .featuresHero {
+    height: 60vh;
+    min-height: 440px;
+  }
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .featuresGridSection {
+    padding: 48px 16px;
+  }
+  .cardContent {
+    padding: 24px 20px 20px;
+  }
+  .cardImage {
+    height: 180px;
+  }
+  .cardIcon {
+    width: 42px;
+    height: 42px;
+  }
+}

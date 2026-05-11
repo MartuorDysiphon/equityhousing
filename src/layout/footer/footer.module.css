@@ -1,0 +1,269 @@
+/* Footer.module.css */
+.footer {
+  background: #1A1210;
+  color: #FFFFFF;
+  font-family: 'DM Sans', sans-serif;
+  margin-top: auto;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 32px 32px;
+}
+
+/* Main Footer Content */
+.footerContent {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+/* Brand Column */
+.brandColumn {
+  padding-right: 24px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.logoRed {
+  color: #C0201F;
+}
+
+.tagline {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 24px;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 16px;
+}
+
+.socialIcon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  display: flex;
+align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.socialIcon:hover {
+  background: #C0201F;
+  transform: translateY(-3px);
+}
+
+.socialIcon svg {
+  font-size: 20px;
+}
+
+/* Links Columns */
+.linksColumn h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 24px;
+  color: rgba(255,255,255,0.9);
+}
+
+.linksColumn ul {
+  list-style: none;
+  padding: 0;
+}
+
+.linksColumn li {
+  margin-bottom: 12px;
+}
+
+.linksColumn a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.linksColumn a:hover {
+  color: #C0201F;
+  padding-left: 4px;
+}
+
+/* Contact Column */
+.contactList {
+  list-style: none;
+  padding: 0;
+}
+
+.contactList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+}
+
+.contactList li svg {
+  font-size: 18px;
+  color: #C0201F;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contactList li span {
+  flex: 1;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin-bottom: 24px;
+}
+
+/* Bottom Bar */
+.bottomBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.copyright {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.bottomLinks {
+  display: flex;
+  gap: 24px;
+}
+
+.bottomLinks a {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.bottomLinks a:hover {
+  color: #C0201F;
+}
+
+.backToTop {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 40px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.backToTop:hover {
+  background: #C0201F;
+  transform: translateY(-2px);
+}
+
+.backToTop svg {
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .footerContent {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 32px;
+  }
+  
+  .contactColumn {
+    grid-column: span 3;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 48px 24px 24px;
+  }
+  
+  .footerContent {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .brandColumn {
+    padding-right: 0;
+    text-align: center;
+  }
+  
+  .socialLinks {
+    justify-content: center;
+  }
+  
+  .linksColumn {
+    text-align: center;
+  }
+  
+  .contactColumn {
+    grid-column: auto;
+  }
+  
+  .contactList li {
+    justify-content: center;
+  }
+  
+  .bottomBar {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .bottomLinks {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 40px 20px 20px;
+  }
+  
+  .logo {
+    font-size: 1.3rem;
+  }
+  
+  .linksColumn h4 {
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+  }
+  
+  .linksColumn li {
+    margin-bottom: 8px;
+  }
+  
+  .bottomLinks {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
