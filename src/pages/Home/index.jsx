@@ -29,7 +29,7 @@ function Home() {
 
             <div className={styles.header__cta}>
               <Link to="/apply" className={styles.btn86}>Apply Now</Link>
-              <Link to="/explore" className={`${styles.btn86} ${styles.btn86__ghost}`}>Explore Rooms</Link>
+              <Link to="/residences" className={`${styles.btn86} ${styles.btn86__ghost}`}>Explore Rooms</Link>
             </div>
 
           </div>
